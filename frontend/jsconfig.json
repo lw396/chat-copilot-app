@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@*": [
+                "src/*"
+            ],
+            "@runtime": [
+                "wailsjs/runtime/runtime"
+            ],
+            "@config": [
+                "config"
+            ]
+        },
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+    ]
+}
