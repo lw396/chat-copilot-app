@@ -9,6 +9,7 @@ module.exports = {
       white: colors.white,
       zinc: colors.zinc,
       indigo: colors.indigo,
+      black: colors.black,
     },
     fontFamily: {
       sans: ["Inter", "sans-serif"],

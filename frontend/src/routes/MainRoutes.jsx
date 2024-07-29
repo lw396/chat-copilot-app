@@ -13,7 +13,7 @@ const MainRoutes = {
           element: <HomePage />,
         },
         {
-          path: "/home",
+          path: "home",
           element: <HomePage />,
         },
       ],
