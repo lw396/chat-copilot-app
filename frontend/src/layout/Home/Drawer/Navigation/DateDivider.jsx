@@ -6,7 +6,7 @@ import React from "react";
 
 function DateDivider({ date }) {
   return (
-    <div className="flex flex-col py-2 mt-3 text-xs leading-5 bg-slate-50 text-zinc-900">
+    <div className="flex flex-col py-2 mt-3 text-xs leading-5 text-zinc-900">
       <div className="pl-4">{date}</div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 function ChatItem({ icon, text }) {
   return (
-    <div className="flex flex-col py-2.5 w-full bg-slate-50 border-t-2  border-zinc-400 border-opacity-10">
+    <div className="flex flex-col py-2.5 w-full border-t-2 border-zinc-400 border-opacity-10">
       <div className="flex gap-2 pl-3 text-xs leading-4 ">
         <img
           loading="lazy"
