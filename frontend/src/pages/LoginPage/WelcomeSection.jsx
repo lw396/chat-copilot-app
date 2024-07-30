@@ -34,7 +34,7 @@ function WelcomeSection() {
           </div>
         </div>
         <div className="justify-start items-start flex leading-8">
-          <div className=" text-xs text-[#1c1c1c]/40 px-1">
+          <div className="text-xs text-[#1c1c1c]/40 px-1">
             <button onClick={handleClick}>
               github.com/lw396/
               <br />

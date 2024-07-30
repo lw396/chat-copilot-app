@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import useAuth from "@hooks/useAuth";
-import { formToJSON } from "axios";
 
 const AuthGuard = ({ children }) => {
   const { isLoggedIn } = useAuth();
@@ -11,7 +10,7 @@ const AuthGuard = ({ children }) => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("login");
+      navigate("/login");
     }
   }, [isLoggedIn, navigate]);
 

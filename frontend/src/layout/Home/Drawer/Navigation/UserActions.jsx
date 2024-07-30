@@ -1,32 +1,31 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
+
+import { AiFillSetting, AiFillSun, AiFillMoon } from "react-icons/ai";
+
+import avatar from "@assets/images/avatar.png";
 
 function UserActions() {
+  const [isDark, setIsDark] = useState(true);
+
+  const toggleTheme = useCallback(() => {
+    setIsDark((prev) => !prev);
+  }, []);
+
   return (
-    <div className="flex flex-wrap gap-4 content-center p-4 mt-48 rounded-lg backdrop-blur-[10px] bg-white bg-opacity-80">
-      <div className="flex flex-col justify-center items-start pr-2 my-auto rounded-lg">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/fc76fa0aea1a079cb8df7de48d32afe87fae6eb7fcd230bf11f62c22d05b74c0?apiKey=f7c445a693754f41b608316d680ac812&&apiKey=f7c445a693754f41b608316d680ac812"
-          className="w-6 aspect-square rounded-[80px]"
-          alt="User avatar"
-        />
+    <div className="flex flex-wrap justify-between py-3 w-52 absolute bottom-0 bg-white">
+      <div className="inline-flex px-2">
+        <img src={avatar} alt="avatar" className="w-8 h-8 rounded-full" />
+        <div className="p-1 leading-7">Tom</div>
       </div>
-      <button className="flex justify-center items-center p-1 rounded-lg">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/565bd84cf8a8d24afa3d5b36891ec6d2b2bd549dd48988aefbc48e714359913f?apiKey=f7c445a693754f41b608316d680ac812&&apiKey=f7c445a693754f41b608316d680ac812"
-          className="w-6 aspect-square"
-          alt="Action 1"
-        />
-      </button>
-      <button className="flex justify-center items-center p-1 rounded-lg">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/99e1046dedde49efc8f613d9b29897609ebbc49464930c35d05636d1f4d6ca77?apiKey=f7c445a693754f41b608316d680ac812&&apiKey=f7c445a693754f41b608316d680ac812"
-          className="w-6 aspect-square"
-          alt="Action 2"
-        />
-      </button>
+      <div className="inline-flex">
+        <button className="p-2">
+          <AiFillSetting size={20} />
+        </button>
+
+        <button className="p-2" onClick={toggleTheme}>
+          {isDark ? <AiFillSun size={20} /> : <AiFillMoon size={20} />}
+        </button>
+      </div>
     </div>
   );
 }

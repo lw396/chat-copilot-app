@@ -37,26 +37,30 @@ const chatItems = [
 
 const Navigation = () => {
   return (
-    <main className="flex flex-col p-4  min-w-[230px] max-w-[500px] w-60">
+    <main className="flex flex-col p-4 w-60 overflow-y-auto h-screen">
       <ChatHeader />
 
-      <DateDivider date="联系人" />
-      {chatItems.slice(0, 4).map((item, index) => (
-        <ChatItem
-          key={index}
-          icon={item.icon}
-          text={item.text}
-        />
-      ))}
+      <div className="mb-10">
+        <DateDivider date="联系人" />
+        {chatItems.slice(0, 4).map((item, index) => (
+          <ChatItem key={index} icon={item.icon} text={item.text} />
+        ))}
 
-      <DateDivider date="群聊" />
-      {chatItems.slice(4).map((item, index) => (
-        <ChatItem
-          key={index + 4}
-          icon={item.icon}
-          text={item.text}
-        />
-      ))}
+        <DateDivider date="群聊" />
+        {chatItems.slice(4).map((item, index) => (
+          <ChatItem key={index + 4} icon={item.icon} text={item.text} />
+        ))}
+        <DateDivider date="联系人" />
+        {chatItems.slice(0, 4).map((item, index) => (
+          <ChatItem key={index} icon={item.icon} text={item.text} />
+        ))}
+
+        <DateDivider date="群聊" />
+        {chatItems.slice(4).map((item, index) => (
+          <ChatItem key={index + 4} icon={item.icon} text={item.text} />
+        ))}
+      </div>
+
       <UserActions />
     </main>
   );
