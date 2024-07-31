@@ -12,7 +12,7 @@ function UserActions() {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-between py-3 w-52 absolute bottom-0 bg-white">
+    <div className="flex flex-wrap justify-between p-3 w-56 absolute bottom-0 left-0 bg-white">
       <div className="inline-flex px-2">
         <img src={avatar} alt="avatar" className="w-8 h-8 rounded-full" />
         <div className="p-1 leading-7">Tom</div>

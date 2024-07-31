@@ -5,7 +5,7 @@ import { AiOutlineSearch, AiOutlinePlus } from "react-icons/ai";
 
 import logo from "@assets/images/logo-universal.png";
 
-function ChatHeader() {
+function NavHeader({ action }) {
   return (
     <header className="absolute top-0 bg-white">
       <div className="flex gap-2 pl-2 pt-2 w-56 ">
@@ -29,6 +29,7 @@ function ChatHeader() {
             id="search"
             name="search"
             type="text"
+            onChange={action}
             placeholder="搜索"
             className="bg-[#f1f3f7] border-spacing-1  w-32 focus:outline-none"
           />
@@ -41,4 +42,4 @@ function ChatHeader() {
   );
 }
 
-export default ChatHeader;
+export default NavHeader;

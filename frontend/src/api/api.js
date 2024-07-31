@@ -14,7 +14,7 @@ export const User = async () => {
 
 export const GetContactPerson = async (offset, search) => {
   return await axios.get("/v1/contact_person_list", {
-    params: { offset: offset, remark: search },
+    params: { offset: offset, nickname: search, remark: search },
   });
 };
 
