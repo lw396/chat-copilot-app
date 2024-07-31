@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import NavHeader from "./NavHeader";
-import DateDivider from "./NavSubtitle";
-import ChatItem from "./NavChatItem";
-import UserActions from "./NavFooter";
+import NavSubtitle from "./NavSubtitle";
+import NavChatItem from "./NavChatItem";
+import NavFooter from "./NavFooter";
 
 import { GetContactPerson, GetGroupContact } from "@api/api";
 import toast from "react-hot-toast";
@@ -40,20 +40,20 @@ const Navigation = () => {
   }, [offset, searchValue, isSwitch]);
 
   return (
-    <main className="flex flex-col p-4 w-56 overflow-y-auto h-screen bg-slate-50">
+    <main className="flex flex-col p-4 w-60 overflow-y-auto h-screen">
       <NavHeader action={handleSearch} />
       <div className="mb-11 mt-16">
-        <div className=" rounded-xl">
-          <DateDivider
+        <div className="bg-slate-50 rounded-xl px-3">
+          <NavSubtitle
             date={!isSwitch ? "联系人" : "群组"}
             action={handleSwitch}
           />
           {chatList.map((item, index) => (
-            <ChatItem key={index} item={item} />
+            <NavChatItem key={index} item={item} />
           ))}
         </div>
       </div>
-      <UserActions />
+      <NavFooter />
     </main>
   );
 };

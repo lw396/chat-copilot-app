@@ -4,7 +4,7 @@ import { AiFillSetting, AiFillSun, AiFillMoon } from "react-icons/ai";
 
 import avatar from "@assets/images/avatar.png";
 
-function UserActions() {
+function NavFooter() {
   const [isDark, setIsDark] = useState(true);
 
   const toggleTheme = useCallback(() => {
@@ -15,7 +15,7 @@ function UserActions() {
     <div className="flex flex-wrap justify-between p-3 w-56 absolute bottom-0 left-0 bg-white">
       <div className="inline-flex px-2">
         <img src={avatar} alt="avatar" className="w-8 h-8 rounded-full" />
-        <div className="p-1 leading-7">Tom</div>
+        <div className="ml-1 p-1 leading-7">Tom</div>
       </div>
       <div className="inline-flex">
         <button className="p-2">
@@ -30,4 +30,4 @@ function UserActions() {
   );
 }
 
-export default UserActions;
+export default NavFooter;

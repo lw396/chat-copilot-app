@@ -7,7 +7,7 @@ import logo from "@assets/images/logo-universal.png";
 
 function NavHeader({ action }) {
   return (
-    <header className="absolute top-0 bg-white">
+    <header className="absolute top-0 left-0 bg-white px-3">
       <div className="flex gap-2 pl-2 pt-2 w-56 ">
         <div className="flex justify-center items-center p-1 my-auto rounded-lg">
           <button>
@@ -31,7 +31,7 @@ function NavHeader({ action }) {
             type="text"
             onChange={action}
             placeholder="搜索"
-            className="bg-[#f1f3f7] border-spacing-1  w-32 focus:outline-none"
+            className="bg-[#f1f3f7] border-spacing-1 w-32 focus:outline-none"
           />
         </div>
         <button className="bg-slate-200/50 p-1.5 rounded-md">
