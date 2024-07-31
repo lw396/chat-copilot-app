@@ -11,3 +11,15 @@ export const Login = async (username, password) => {
 export const User = async () => {
   return await axios.get("/v1/user");
 };
+
+export const GetContactPerson = async (offset, search) => {
+  return await axios.get("/v1/contact_person_list", {
+    params: { offset: offset, remark: search },
+  });
+};
+
+export const GetGroupContact = async (offset, search) => {
+  return await axios.get("/v1/group_contact_list", {
+    params: { offset: offset, nickname: search },
+  });
+};

@@ -33,7 +33,7 @@ function ChatHeader() {
             className="bg-[#f1f3f7] border-spacing-1  w-32 focus:outline-none"
           />
         </div>
-        <button onClick={""} className="bg-slate-200/50 p-1.5 rounded-md">
+        <button className="bg-slate-200/50 p-1.5 rounded-md">
           <AiOutlinePlus size={20} color="#9da3ae" />
         </button>
       </div>

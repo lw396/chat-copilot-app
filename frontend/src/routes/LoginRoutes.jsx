@@ -1,5 +1,5 @@
 import AuthLayout from "@layout/Auth";
-import AuthLogin from "@pages/LoginPage/LoginPage";
+import AuthLogin from "@pages/LoginPage";
 
 const LoginRoutes = {
   path: "/",

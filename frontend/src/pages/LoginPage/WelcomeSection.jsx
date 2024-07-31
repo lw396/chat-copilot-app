@@ -1,12 +1,13 @@
 import React from "react";
-import { BrowserOpenURL } from "@runtime";
 
+import { BrowserOpenURL } from "@runtime";
+import { APP_SOURCE } from "@config";
 import LoginForm from "./LoginForm";
 import logo from "@assets/images/logo-universal.png";
 
 function WelcomeSection() {
   const handleClick = () => {
-    BrowserOpenURL("https://github.com/lw396/chatcopilot");
+    BrowserOpenURL(APP_SOURCE);
   };
 
   return (

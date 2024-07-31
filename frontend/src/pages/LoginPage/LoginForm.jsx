@@ -17,13 +17,9 @@ export default function LoginForm() {
 
     try {
       await login(username, password);
-      if (scriptedRef.current) {
-        toast.success("登录成功");
-      }
+      toast.success("登录成功");
     } catch (error) {
-      if (scriptedRef.current) {
-        toast.error(error);
-      }
+      toast.error(error.msg);
     }
   };
 
