@@ -5,7 +5,7 @@ import { AiOutlineSearch, AiOutlinePlus } from "react-icons/ai";
 
 import logo from "@assets/images/logo-universal.png";
 
-function NavHeader({ action }) {
+function NavHeader({ action, add }) {
   return (
     <header className="absolute top-0 left-0 bg-white px-3">
       <div className="flex gap-2 pl-2 pt-2 w-56 ">
@@ -23,7 +23,7 @@ function NavHeader({ action }) {
       </div>
 
       <div className="flex gap-1.5 py-2 text-sm leading-5">
-        <div className="flex gap-1 bg-slate-200/50 px-2 py-1.5 rounded-md">
+        <div className="flex gap-1 bg-slate-200/50 px-3 py-1.5 rounded-md">
           <AiOutlineSearch size={20} color="#9da3ae" />
           <input
             id="search"
@@ -34,7 +34,7 @@ function NavHeader({ action }) {
             className="bg-[#f1f3f7] border-spacing-1 w-32 focus:outline-none"
           />
         </div>
-        <button className="bg-slate-200/50 p-1.5 rounded-md">
+        <button className="bg-slate-200/50 p-1.5 rounded-md" onClick={add}>
           <AiOutlinePlus size={20} color="#9da3ae" />
         </button>
       </div>
