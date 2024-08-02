@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
+import clsx from "clsx";
 
 import NavHeader from "./NavHeader";
 import NavSubtitle from "./NavSubtitle";
@@ -12,11 +13,16 @@ const Navigation = () => {
   const [offset, setOffset] = useState(0);
   const [chatList, setChatList] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [isOpen, setIsOpen] = useState(true);
   const [isSwitch, setIsSwitch] = useState(false);
   const [isAddChat, setIsAddChat] = useState(false);
 
   const handleSearch = (event) => {
     setSearchValue(event.target.value);
+  };
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
   };
 
   const handleSwitch = () => {
@@ -45,19 +51,30 @@ const Navigation = () => {
   }, [offset, searchValue, isSwitch]);
 
   return (
-    <main className="flex flex-col p-3 w-60 overflow-y-auto h-screen">
-      <NavHeader action={handleSearch} add={handleAddChat} />
-      <div className="mb-11 mt-20 bg-slate-50 rounded-2xl px-3">
-        <NavSubtitle
-          date={!isSwitch ? "联系人" : "群组"}
-          action={handleSwitch}
-        />
-        {chatList.map((item, index) => (
-          <ChatItem key={index} item={item} />
-        ))}
-      </div>
+    <nav className={`flex flex-col w-60 p-3 overflow-y-auto h-screen`}>
+      <NavHeader
+        search={handleSearch}
+        isShow={isOpen}
+        add={handleAddChat}
+        open={toggleDrawer}
+      />
+
+      {isOpen ? (
+        <div className="mb-11 mt-20 bg-slate-50 rounded-2xl px-3">
+          <NavSubtitle
+            date={!isSwitch ? "联系人" : "群组"}
+            action={handleSwitch}
+          />
+          {chatList.map((item, index) => (
+            <ChatItem key={index} item={item} />
+          ))}
+        </div>
+      ) : (
+        <></>
+      )}
+
       <NavFooter />
-    </main>
+    </nav>
   );
 };
 
