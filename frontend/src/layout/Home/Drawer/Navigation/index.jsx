@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import clsx from "clsx";
 
 import NavHeader from "./NavHeader";
 import NavSubtitle from "./NavSubtitle";
 import NavFooter from "./NavFooter";
-import ChatItem from "@components/ChatItem";
 
+import ChatItem from "@components/ChatItem";
+import AddChat from "@components/AddChat";
 import { GetContactPersonList, GetGroupContactList } from "@api/api";
 
 const Navigation = () => {
@@ -74,6 +74,8 @@ const Navigation = () => {
       )}
 
       <NavFooter />
+
+      {isAddChat && <AddChat />}
     </nav>
   );
 };
