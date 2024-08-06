@@ -12,7 +12,7 @@ import {
 import ChatItem from "@components/ChatItem";
 import { Warn } from "@utils/sweetalert";
 
-const AddChat = () => {
+const AddChat = ({ close }) => {
   const [nickname, setNickname] = useState("");
   const [contactList, setContactList] = useState([]);
   const [groupList, setGroupList] = useState([]);
@@ -22,7 +22,7 @@ const AddChat = () => {
   };
 
   const handleAddChat = (item, type) => {
-    const text = `确定要添加 ${item.remark || item.nickname}  的聊天吗？`;
+    const text = `确定要添加 ${item.remark || item.nickname} 的聊天吗？`;
     Warn("添加聊天", text).then(async (result) => {
       try {
         if (!result.isConfirmed) {
@@ -54,7 +54,6 @@ const AddChat = () => {
         setContactList(contact);
         setGroupList(group);
       } catch (error) {
-        console.error(error);
         toast.error(error.msg);
       }
     };
@@ -63,8 +62,9 @@ const AddChat = () => {
   }, [nickname]);
 
   return (
-    <div className="w-full h-full">
-      <div className="absolute inset-0 flex top-40 justify-center">
+    <>
+      <div className="absolute inset-0 bg-slate-100/50" onClick={close} />
+      <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <div
           className={clsx(
             "h-12 w-96 border-spacing-y-1 border-[#c2c2c2] shadow-md pl-4 shadow-zinc-900/50",
@@ -84,7 +84,7 @@ const AddChat = () => {
         </div>
       </div>
       {contactList.length + groupList.length > 0 && (
-        <div className="absolute inset-0 flex top-52 justify-center ">
+        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 mt-[1.5rem]">
           <div
             className={clsx(
               "h-72 w-96 border-[#c2c2c2] bg-white shadow-md shadow-zinc-900/50",
@@ -108,7 +108,7 @@ const AddChat = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -59,7 +59,7 @@ const Navigation = () => {
         open={toggleDrawer}
       />
 
-      {isOpen ? (
+      {isOpen && (
         <div className="mb-11 mt-20 bg-slate-50 rounded-2xl px-3">
           <NavSubtitle
             date={!isSwitch ? "联系人" : "群组"}
@@ -69,13 +69,11 @@ const Navigation = () => {
             <ChatItem key={index} item={item} />
           ))}
         </div>
-      ) : (
-        <></>
       )}
 
       <NavFooter />
 
-      {isAddChat && <AddChat />}
+      {isAddChat && <AddChat close={handleAddChat} />}
     </nav>
   );
 };

@@ -6,7 +6,7 @@ export const Warn = (title, text) => {
   return Swal.fire({
     title: title,
     text: text,
-    width: 320,
+    width: 350,
     padding: "0 0 1em 0",
     imageUrl: logo,
     imageWidth: 50,
