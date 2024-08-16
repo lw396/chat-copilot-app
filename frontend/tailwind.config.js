@@ -15,7 +15,12 @@ module.exports = {
       sans: ["Inter", "sans-serif"],
       serif: ["Georgia", "serif"],
     },
-    extend: {},
+    extend: {
+      scrollbar: {
+        thumb: "bg-blue-500 hover:bg-blue-700",
+        track: "bg-gray-100",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

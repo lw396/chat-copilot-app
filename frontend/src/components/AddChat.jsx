@@ -12,7 +12,7 @@ import {
 import ChatItem from "@components/ChatItem";
 import { Warn } from "@utils/sweetalert";
 
-const AddChat = ({ close }) => {
+const AddChat = ({ close, update }) => {
   const [nickname, setNickname] = useState("");
   const [contactList, setContactList] = useState([]);
   const [groupList, setGroupList] = useState([]);
@@ -34,6 +34,8 @@ const AddChat = ({ close }) => {
           await AddContactPerson(item.usr_name);
         }
         toast.success("添加成功！");
+        update();
+        close();
       } catch (error) {
         console.log(error);
         toast.error(error.msg);

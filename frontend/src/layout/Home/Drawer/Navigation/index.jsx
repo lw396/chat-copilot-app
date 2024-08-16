@@ -16,6 +16,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [isSwitch, setIsSwitch] = useState(false);
   const [isAddChat, setIsAddChat] = useState(false);
+  const [isUpdate, setIsUpdate] = useState(false);
 
   const handleSearch = (event) => {
     setSearchValue(event.target.value);
@@ -33,6 +34,10 @@ const Navigation = () => {
     setIsAddChat(!isAddChat);
   };
 
+  const updateChatList = () => {
+    setIsUpdate(!isUpdate);
+  };
+
   useEffect(() => {
     const init = async () => {
       try {
@@ -48,7 +53,7 @@ const Navigation = () => {
       }
     };
     init();
-  }, [offset, searchValue, isSwitch]);
+  }, [offset, searchValue, isSwitch, isUpdate]);
 
   return (
     <nav className={`flex flex-col w-60 p-3 overflow-y-auto h-screen`}>
@@ -73,7 +78,7 @@ const Navigation = () => {
 
       <NavFooter />
 
-      {isAddChat && <AddChat close={handleAddChat} />}
+      {isAddChat && <AddChat close={handleAddChat} update={updateChatList} />}
     </nav>
   );
 };
